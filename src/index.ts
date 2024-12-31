@@ -18,7 +18,7 @@ function groupWords(str: string, openBracket = "[", closeBracket = "]") {
         case openBracket: {
           arr.push(main());
           startIdx = idx;
-          break;
+          continue;
         }
         case closeBracket: {
           addWord();
