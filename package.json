@@ -1,0 +1,33 @@
+{
+  "name": "group-words",
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": "cdslxc",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./react": {
+      "import": "./dist/react.js",
+      "require": "./dist/react.cjs",
+      "types": "./dist/react.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "tsc"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.11",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "type": "module"
+}
