@@ -2,13 +2,18 @@ import React from "react";
 import { default as parse } from "../index";
 import { ParsedResult } from "../types";
 
-const render = (arr: ParsedResult, j?: number): React.ReactNode => {
+const recursiveRenderCompounds = (
+  arr: ParsedResult,
+  idx?: number
+): React.ReactNode => {
   if (Array.isArray(arr)) {
-    if (!j && j !== 0) return <>{arr.map(render)}</>;
+    if (!idx && idx !== 0) return <>{arr.map(recursiveRenderCompounds)}</>;
 
     return (
-      <React.Fragment key={j}>
-        <span>{arr.map(render)}</span>{" "}
+      <React.Fragment key={idx}>
+        <span style={{ display: "inline-block" }}>
+          {arr.map(recursiveRenderCompounds)}
+        </span>{" "}
       </React.Fragment>
     );
   }
@@ -16,7 +21,7 @@ const render = (arr: ParsedResult, j?: number): React.ReactNode => {
   return arr + " ";
 };
 
-const parseGroupWords = (str: string | null | undefined) =>
-  str ? render(parse(str)) : "";
+export const p = (str: string | null | undefined) =>
+  str ? recursiveRenderCompounds(parse(str)) : "";
 
-export default parseGroupWords;
+export default p;

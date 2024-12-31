@@ -1,6 +1,6 @@
 import { ParsedResult } from "./types";
 
-function groupWords(str: string, openBracket = "[", closeBracket = "]") {
+function parseBrackets(str: string, openBracket = "[", closeBracket = "]") {
   let idx = 0;
 
   return (function main(): ParsedResult {
@@ -13,18 +13,21 @@ function groupWords(str: string, openBracket = "[", closeBracket = "]") {
       }
     }
 
-    while (idx <= str.length)
+    while (idx <= str.length) {
       switch (str[idx++]) {
-        case openBracket: {
+        case " ":
+          addWord();
+          startIdx = idx;
+          continue;
+        case "[":
           arr.push(main());
           startIdx = idx;
           continue;
-        }
-        case closeBracket: {
+        case "]":
           addWord();
           return arr;
-        }
       }
+    }
 
     addWord();
 
@@ -32,4 +35,4 @@ function groupWords(str: string, openBracket = "[", closeBracket = "]") {
   })();
 }
 
-export default groupWords;
+export default parseBrackets;
