@@ -1,7 +1,6 @@
-type ValueOrArray<T> = T | ValueOrArray<T>[];
-type ParsedResult = ValueOrArray<string>;
+import { ParsedResult } from "./types";
 
-function parseBrackets(str: string, openBracket = "[", closeBracket = "]") {
+function groupWords(str: string, openBracket = "[", closeBracket = "]") {
   let idx = 0;
 
   return (function main(): ParsedResult {
@@ -33,4 +32,4 @@ function parseBrackets(str: string, openBracket = "[", closeBracket = "]") {
   })();
 }
 
-export default parseBrackets;
+export default groupWords;
