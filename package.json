@@ -1,7 +1,7 @@
 {
   "name": "group-words",
   "license": "MIT",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "author": "cdslxc",
   "type": "module",
   "homepage": "https://github.com/cdslxc/group-words#readme",
@@ -22,6 +22,7 @@
     "@types/bun": "^1.1.14",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "bun-plugin-dts": "^0.3.0",
     "typescript": "^5.7.2"
   }
 }
