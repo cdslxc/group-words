@@ -1,37 +1,32 @@
 {
   "name": "group-words",
   "license": "MIT",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "cdslxc",
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "repository": "github:cdslxc/group-words",
+  "main": "./build/index.js",
+  "module": "./build/index.mjs",
+  "types": "./build/index.d.ts",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
     "./react": {
-      "types": "./dist/react.d.ts",
-      "import": "./dist/react.js",
-      "require": "./dist/react.cjs"
+      "types": "./build/react.d.ts",
+      "import": "./build/react.js",
+      "require": "./build/react.cjs"
     }
   },
   "scripts": {
-    "build": "tsup",
-    "lint": "tsc",
-    "release": "pnpm run build && changeset publish"
+    "build": "bun run build.ts",
+    "lint": "tsc"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.1 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",
+    "@types/bun": "^1.1.14",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
-    "tsup": "^8.3.5",
     "typescript": "^5.7.2"
   }
 }

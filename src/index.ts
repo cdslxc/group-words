@@ -1,38 +1,15 @@
-import { ParsedResult } from "./types";
+export function hasValidGrouping(s: string, openChar = "[", closeChar = "]") {
+  const stack = [];
 
-function parseBrackets(str: string, openBracket = "[", closeBracket = "]") {
-  let idx = 0;
-
-  return (function main(): ParsedResult {
-    const arr = [];
-    let startIdx = idx;
-
-    function addWord() {
-      if (idx - 1 > startIdx) {
-        arr.push(str.slice(startIdx, idx - 1));
+  for (const char of s) {
+    if (char === openChar) {
+      stack.push(char);
+    } else if (char === closeChar) {
+      if (stack.length === 0 || stack.pop() !== openChar) {
+        return false;
       }
     }
+  }
 
-    while (idx <= str.length) {
-      switch (str[idx++]) {
-        case " ":
-          addWord();
-          startIdx = idx;
-          continue;
-        case "[":
-          arr.push(main());
-          startIdx = idx;
-          continue;
-        case "]":
-          addWord();
-          return arr;
-      }
-    }
-
-    addWord();
-
-    return arr;
-  })();
+  return stack.length === 0;
 }
-
-export default parseBrackets;
