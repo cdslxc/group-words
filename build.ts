@@ -4,5 +4,13 @@ await Bun.build({
   entrypoints: ["./src/index.ts", "./src/react/index.tsx"],
   outdir: "./build",
   minify: true,
-  plugins: [dts()],
+  target: "browser",
+  format: "cjs",
+  plugins: [
+    dts({
+      output: {
+        noBanner: true,
+      },
+    }),
+  ],
 });

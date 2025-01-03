@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 
-function parseAndWrap(
+export function parseAndWrap(
   text: string,
-  openBracket: string,
-  closeBracket: string,
+  openBracket?: string,
+  closeBracket?: string,
   key: number = 0
 ): (string | ReactNode)[] {
   const wrapWithSpan = (
@@ -58,9 +58,10 @@ function parseAndWrap(
 
 export const ParseAndWrapComponent: React.FC<{
   text: string;
-  brackets: [string, string];
+  brackets?: [string, string];
 }> = ({ text, brackets }) => {
-  return parseAndWrap(text, ...brackets);
+  const [openBracket, closeBracket] = brackets ?? [undefined, undefined];
+  return parseAndWrap(text, openBracket, closeBracket);
 };
 
 export default ParseAndWrapComponent;

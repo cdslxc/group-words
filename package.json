@@ -1,14 +1,18 @@
 {
   "name": "group-words",
   "license": "MIT",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "author": "cdslxc",
   "type": "module",
   "homepage": "https://github.com/cdslxc/group-words#readme",
   "repository": "github:cdslxc/group-words",
   "main": "./build/index.js",
+  "types": "./build.index.d.ts",
   "exports": {
-    "./react": "./build/react/index.js"
+    "./react": {
+      "types": "./build/react/index.tsx",
+      "default": "./build/react/index.js"
+    }
   },
   "scripts": {
     "build": "bun run build.ts",
