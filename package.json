@@ -1,9 +1,10 @@
 {
   "name": "group-words",
   "license": "MIT",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "cdslxc",
   "type": "module",
+  "homepage": "https://github.com/cdslxc/group-words#readme",
   "repository": "github:cdslxc/group-words",
   "main": "./build/index.js",
   "exports": {
