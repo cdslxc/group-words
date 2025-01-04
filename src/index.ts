@@ -13,3 +13,9 @@ export function hasValidGrouping(s: string, openChar = "[", closeChar = "]") {
 
   return stack.length === 0;
 }
+
+export default function sayHello() {
+  return "hello";
+}
+
+console.log(sayHello());

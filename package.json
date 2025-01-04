@@ -1,32 +1,19 @@
 {
   "name": "group-words",
+  "private": true,
+  "workspaces": [
+    "packages/react-group-words"
+  ],
   "license": "MIT",
-  "version": "0.0.12",
-  "author": "cdslxc",
-  "type": "module",
-  "homepage": "https://github.com/cdslxc/group-words#readme",
+  "author": "Tien Dat Ta (Cody) <hi@cody.gd> (https://cody.gd/)",
+  "version": "0.0.13",
   "repository": "github:cdslxc/group-words",
-  "main": "./build/index.js",
-  "types": "./build.index.d.ts",
-  "exports": {
-    "./react": {
-      "types": "./build/react/index.tsx",
-      "default": "./build/react/index.js"
-    }
-  },
-  "scripts": {
-    "build": "bun run build.ts",
-    "lint": "tsc"
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
   },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.1 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.27.11",
-    "@types/bun": "^1.1.14",
-    "@types/react": "^19.0.2",
-    "@types/react-dom": "^19.0.2",
-    "bun-plugin-dts": "^0.3.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.0.0"
   }
 }

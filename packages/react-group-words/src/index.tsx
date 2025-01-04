@@ -65,15 +65,3 @@ export const ParseAndWrapComponent: React.FC<{
 };
 
 export default ParseAndWrapComponent;
-
-// export default function App() {
-//   const text = "Hello (world [nested {example}])!";
-//   return (
-//     <div>
-//       {/* Example Usage */}
-//       <ParseAndWrapComponent text={text} openBracket="(" closeBracket=")" />
-//       <ParseAndWrapComponent text={text} openBracket="[" closeBracket="]" />
-//       <ParseAndWrapComponent text={text} openBracket="{" closeBracket="}" />
-//     </div>
-//   );
-// }
