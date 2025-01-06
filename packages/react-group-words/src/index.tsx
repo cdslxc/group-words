@@ -2,8 +2,8 @@ import type { ReactNode } from "react";
 
 export function parseAndWrap(
   text: string,
-  openBracket?: string,
-  closeBracket?: string,
+  openBracket: string = "[",
+  closeBracket: string = "]",
   key: number = 0
 ): (string | ReactNode)[] {
   const wrapWithSpan = (
@@ -56,12 +56,16 @@ export function parseAndWrap(
   return result;
 }
 
-export const ParseAndWrapComponent: React.FC<{
-  text: string;
-  brackets?: [string, string];
-}> = ({ text, brackets }) => {
-  const [openBracket, closeBracket] = brackets ?? [undefined, undefined];
+export const RenderGroupedWords: React.FC<{
+  text: string | null | undefined;
+  openBracket?: string;
+  closeBracket?: string;
+}> = ({ text, openBracket, closeBracket }) => {
+  if (typeof text !== "string") {
+    return "";
+  }
+
   return parseAndWrap(text, openBracket, closeBracket);
 };
 
-export default ParseAndWrapComponent;
+export default RenderGroupedWords;

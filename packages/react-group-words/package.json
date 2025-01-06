@@ -1,24 +1,23 @@
 {
   "name": "react-group-words",
-  "license": "MIT",
+  "version": "0.0.14",
   "author": "Tien Dat Ta (Cody) <hi@cody.gd> (https://cody.gd/)",
-  "version": "0.0.5-dev",
   "repository": "github:cdslxc/group-words",
-  "type": "module",
-  "module": "./src/index.tsx",
-  "main": "./build/index.js",
-  "files": [
-    "build"
-  ],
-  "scripts": {
-    "build": "bun run build.ts",
-    "publish": "bun publish"
+  "devDependencies": {
+    "@types/bun": "^1.1.14",
+    "@types/react": "^19.0.2",
+    "bun-plugin-dts": "^0.3.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.1 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc",
     "typescript": "^5.0.0"
   },
-  "devDependencies": {
-    "@types/bun": "^1.1.14"
-  }
+  "files": [
+    "build"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production bun run build.ts"
+  },
+  "type": "module"
 }
